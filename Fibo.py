@@ -5,11 +5,11 @@ Created on Tue Oct  1 09:50:27 2024
 @author: 1119f
 """
 
-def rabbit():
+def babbit():
     a, b = 0, 1
     while b <= 50:
         print(b)
         a, b = b, a+b
     return b
 
-rabbit()
+babbit()
