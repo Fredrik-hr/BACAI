@@ -1,0 +1,17 @@
+def mean(numbers):
+    n = len(numbers)
+    sum_of = sum(numbers)
+    mean_value = sum_of / n
+    return mean_value
+
+def variance(numbers):
+    n = len(numbers)
+    var_mean = mean(numbers)
+    sqrd_diff = sum((i - var_mean)**2 for i in numbers) 
+    variance_val = sqrd_diff/(n-1)
+    return variance_val
+
+def standard_deviation(numbers):
+    var = variance(numbers) #sample variance
+    deviation = math.sqrt(var) #Square root of variance
+    return deviation
