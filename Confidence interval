@@ -1,0 +1,32 @@
+from samp_mean import smp_mean
+
+def margin_error():
+    s = standard_deviation()
+    half_me = s/sqrt(smp_mean())
+    me = z_value*half_me
+    return me
+
+print("Margin error: ", round(margin_error(),3))
+
+def confidence_interval():
+    ci_lower = smp_mean()-margin_error()
+    ci_upper = smp_mean()+margin_error()
+    round_cil = round(ci_lower, 3)
+    round_ciu = round(ci_upper, 3)
+    return round_cil, round_ciu
+
+print("Confidence interval: ", confidence_interval())
+
+
+
+import random
+
+from random_grades import list1
+
+n = random.sample(list1, 15)
+sum_n = sum(n)
+len_n = len(n)
+
+def smp_mean():
+    sp_mean = sum_n/len_n
+    return sp_mean
