@@ -1,0 +1,43 @@
+#makes the list of trials
+trials = []
+def outcome(P,n):
+    #This repeates the bernoulli trials function for n times
+    for i in range(n):
+        #Appends the resoault of the bernoulli trail to the trail list.
+        trials.append(bernoulli_trails(P))
+    return trials
+
+simulated_trials30 = []
+simulated_trials100 = []
+
+#This function appends trials into the simulated trials lists
+def simulated_trials(P):
+    #Simulates 30 trials
+    for i in range(30):
+        simulated_trials30.append(bernoulli_trails(P))
+    #Simulates a 100 trials
+    for i in range(100):
+        simulated_trials100.append(bernoulli_trails(P))
+    return simulated_trials30, simulated_trials100
+
+      
+#The user can choose the probability here
+P = float(input("Choose the probability: "))
+
+#The user can choose the number of trials here
+n = int(input("Choose number of trials: "))
+
+#Prints the updated 
+print(outcome(P, n))
+#Calculates the theoretically expected outcome of success within the dataset
+print(f"Theoretical value for expectation: {n*P}")
+#Here you cna se how many successful outcomes there are (here I also use the f funtion of print so I dont have to seperate text with",")
+print(f"There are {trials.count(1)} successful outcome aut of {n} trials ")
+#Calculates the standard deviation of the trials
+print("The standard deviation is: ", standard_deviation(outcome(P, n)))
+
+simulated_trials(P)
+#both prints underneath prints the predetermend valuse of n
+print("Predetermend n value as 30: ", simulated_trials30, f" There are {simulated_trials30.count(1)} successes in the predetermend sample")
+
+print(f"Predetermend n value as 100: {simulated_trials100} There are {simulated_trials100.count(1)} successes in the predetermend sample")
