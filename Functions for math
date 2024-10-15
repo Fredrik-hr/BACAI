@@ -15,3 +15,10 @@ def standard_deviation(numbers):
     var = variance(numbers) #sample variance
     deviation = math.sqrt(var) #Square root of variance
     return deviation
+
+def even_check():
+    even = int(input("gib Numbah"))
+    if even %2 == 0:
+        print("this is even")
+    else:
+        print("this is odd")
