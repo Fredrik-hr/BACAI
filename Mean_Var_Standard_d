@@ -1,0 +1,15 @@
+def mean(data):
+    mean = sum(data)/len(data)
+    return mean
+
+def variance(data):
+    n = len(data)
+    var_mean = mean(data)
+    sqrd_diff = sum((i - var_mean)**2 for i in data)
+    variance_val = sqrd_diff/(n-1)
+    return variance_val
+
+def standard_deviation(data):
+    var = variance(data)
+    deviation = sqrt(var)
+    return deviation
