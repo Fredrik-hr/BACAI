@@ -32,11 +32,10 @@ class Bank_Account():
             print("Error try again")
 
                   
-    def transfer(self, recipient):
-        transfer = int(input("How much do you want to transfer: "))
-        if transfer <= self.ac_balance:
-            self.ac_balance -= transfer
-            recipient.ac_balance += transfer
+    def transfer(self, recipient, amount):
+        if amount <= self.ac_balance:
+            self.ac_balance -= amount
+            recipient.ac_balance += amount
             print(recipient.ac_balance)
         else:
-            ("Error, Try again")
+            ("Not Valid")
